@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard - FinanceWise{% endblock %}
+{% block content %}
+
+<h3 class="fw-bold mb-4"><i class="bi bi-speedometer2"></i> Admin Dashboard</h3>
+
+<div class="row g-3">
+  <div class="col-md-3 col-6">
+    <div class="stat-card income">
+      <h6>Total Users</h6>
+      <h3>{{ stats.total_users }}</h3>
+    </div>
+  </div>
+  <div class="col-md-3 col-6">
+    <div class="stat-card balance">
+      <h6>Lessons</h6>
+      <h3>{{ stats.total_lessons }}</h3>
+    </div>
+  </div>
+  <div class="col-md-3 col-6">
+    <div class="stat-card saved">
+      <h6>Quiz Questions</h6>
+      <h3>{{ stats.total_quizzes }}</h3>
+    </div>
+  </div>
+  <div class="col-md-3 col-6">
+    <div class="stat-card expense">
+      <h6>Quiz Attempts</h6>
+      <h3>{{ stats.quiz_attempts }}</h3>
+    </div>
+  </div>
+</div>
+
+<div class="row g-3 mt-1">
+  <div class="col-md-4">
+    <a href="{{ url_for('admin_users') }}" class="text-decoration-none">
+      <div class="card p-4 text-center lesson-card">
+        <i class="bi bi-people" style="font-size:2rem;color:#0f6b52;"></i>
+        <h6 class="fw-bold mt-2">Manage Users</h6>
+      </div>
+    </a>
+  </div>
+  <div class="col-md-4">
+    <a href="{{ url_for('admin_lessons') }}" class="text-decoration-none">
+      <div class="card p-4 text-center lesson-card">
+        <i class="bi bi-mortarboard" style="font-size:2rem;color:#0f6b52;"></i>
+        <h6 class="fw-bold mt-2">Manage Lessons</h6>
+      </div>
+    </a>
+  </div>
+  <div class="col-md-4">
+    <a href="{{ url_for('admin_quizzes') }}" class="text-decoration-none">
+      <div class="card p-4 text-center lesson-card">
+        <i class="bi bi-patch-question" style="font-size:2rem;color:#0f6b52;"></i>
+        <h6 class="fw-bold mt-2">Manage Quizzes</h6>
+      </div>
+    </a>
+  </div>
+</div>
+
+{% endblock %}

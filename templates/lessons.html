@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Learning Modules - FinanceWise{% endblock %}
+{% block content %}
+<h3 class="fw-bold mb-4"><i class="bi bi-mortarboard"></i> Financial Learning Modules</h3>
+
+<div class="row g-3">
+  {% for l in lessons %}
+  <div class="col-md-6 col-lg-4">
+    <div class="card lesson-card p-3 h-100">
+      <div class="d-flex justify-content-between align-items-start">
+        <span class="badge bg-success-subtle text-success-emphasis mb-2">{{ l.category }}</span>
+        {% if l.completed %}
+          <span class="badge bg-success"><i class="bi bi-check-circle"></i> Done</span>
+        {% endif %}
+      </div>
+      <h5 class="fw-bold">{{ l.title }}</h5>
+      <p class="text-muted small">{{ l.content[:100] }}...</p>
+      <a href="{{ url_for('lesson_detail', lesson_id=l.id) }}" class="btn btn-fw-primary btn-sm mt-auto">
+        {{ "Review" if l.completed else "Start Lesson" }}
+      </a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

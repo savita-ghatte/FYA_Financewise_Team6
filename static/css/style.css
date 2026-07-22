@@ -1,0 +1,84 @@
+:root {
+  --fw-primary: #0f6b52;
+  --fw-primary-dark: #0a4a39;
+  --fw-accent: #f2a900;
+  --fw-bg: #f6f8f7;
+}
+
+body {
+  background-color: var(--fw-bg);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.fw-navbar {
+  background: linear-gradient(90deg, var(--fw-primary-dark), var(--fw-primary));
+}
+
+.card {
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.stat-card {
+  border-radius: 14px;
+  padding: 1.25rem;
+  color: #fff;
+}
+
+.stat-card.income { background: linear-gradient(135deg, #0f6b52, #17997a); }
+.stat-card.expense { background: linear-gradient(135deg, #b3261e, #d9463a); }
+.stat-card.balance { background: linear-gradient(135deg, #1a5fb4, #3584e4); }
+.stat-card.saved { background: linear-gradient(135deg, #9c6f00, #f2a900); }
+
+.stat-card h6 { opacity: .85; font-weight: 500; margin-bottom: .25rem; }
+.stat-card h3 { font-weight: 700; margin: 0; }
+
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 999px;
+  padding: .4rem .9rem;
+  font-size: .9rem;
+  margin: .2rem;
+}
+
+.lesson-card {
+  transition: transform .15s ease;
+}
+.lesson-card:hover {
+  transform: translateY(-3px);
+}
+
+.progress-thin {
+  height: 8px;
+  border-radius: 4px;
+}
+
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--fw-primary-dark), var(--fw-primary));
+}
+
+.auth-card {
+  max-width: 420px;
+  width: 100%;
+  border-radius: 16px;
+}
+
+.btn-fw-primary {
+  background-color: var(--fw-primary);
+  border-color: var(--fw-primary);
+  color: #fff;
+}
+.btn-fw-primary:hover {
+  background-color: var(--fw-primary-dark);
+  border-color: var(--fw-primary-dark);
+  color: #fff;
+}

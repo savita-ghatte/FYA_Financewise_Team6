@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Quiz Result - {{ lesson.title }}{% endblock %}
+{% block content %}
+
+<div class="card p-5 text-center">
+  <i class="bi bi-trophy" style="font-size:3rem;color:#f2a900;"></i>
+  <h3 class="fw-bold mt-3">Quiz Complete!</h3>
+  <p class="text-muted">{{ lesson.title }}</p>
+  <h1 class="fw-bold my-3">{{ score }} / {{ total }}</h1>
+  <p>
+    {% if total and score == total %}
+      Perfect score! 🎉
+    {% elif total and score >= total / 2 %}
+      Good job! Keep practicing to improve further.
+    {% else %}
+      Consider revisiting the lesson content and trying again.
+    {% endif %}
+  </p>
+  <div class="d-flex justify-content-center gap-2 mt-3">
+    <a href="{{ url_for('quiz', lesson_id=lesson.id) }}" class="btn btn-outline-secondary">Retake Quiz</a>
+    <a href="{{ url_for('lessons') }}" class="btn btn-fw-primary">Back to Lessons</a>
+  </div>
+</div>
+
+{% endblock %}

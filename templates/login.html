@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Login - FinanceWise{% endblock %}
+{% block content %}
+<div class="auth-wrapper">
+  <div class="card auth-card p-4 shadow">
+    <div class="text-center mb-3">
+      <i class="bi bi-piggy-bank-fill" style="font-size:2.5rem;color:#0f6b52;"></i>
+      <h3 class="fw-bold mt-2">FinanceWise</h3>
+      <p class="text-muted">Financial literacy platform for youth earners</p>
+    </div>
+
+    <form method="POST" action="{{ url_for('login') }}">
+      <div class="mb-3">
+        <label class="form-label">Email Address</label>
+        <input type="email" name="email" class="form-control" required autofocus>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" name="password" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-fw-primary w-100">Log In</button>
+    </form>
+
+    <p class="text-center mt-3 mb-0">
+      New here? <a href="{{ url_for('register') }}">Create an account</a>
+    </p>
+    <hr>
+    <p class="text-muted small text-center mb-0">
+      Demo user: demo@financewise.com / demo123<br>
+      Admin: admin@financewise.com / admin123
+    </p>
+  </div>
+</div>
+{% endblock %}
