@@ -1,0 +1,276 @@
+/* ===========================
+   Google Font
+=========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    color:#2F3325;
+    background:#F5F0E6;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+/* ===========================
+   Quiz Card
+=========================== */
+
+.container{
+    width:100%;
+    max-width:750px;
+}
+
+.quiz-card{
+    background:#FFFDF8;
+    color:#2F3325;
+    border-radius:25px;
+    padding:40px;
+    border:2px solid #B8B08D;
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+
+.quiz-card h1{
+    text-align:center;
+    color:#4A5A2C;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#6F6858;
+    margin-bottom:25px;
+}
+
+/* ===========================
+   Progress
+=========================== */
+
+.progress-section{
+    margin-bottom:25px;
+}
+
+.progress-text{
+    display:flex;
+    justify-content:space-between;
+    font-weight:600;
+    color:#4A5A2C;
+    margin-bottom:8px;
+}
+
+.progress-bar{
+    width:100%;
+    height:12px;
+    background:#DDD4C4;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+#progress{
+    width:10%;
+    height:100%;
+    background:#4A5A2C;
+    transition:.4s;
+}
+
+/* ===========================
+   Question
+=========================== */
+
+.question-box{
+    margin-bottom:25px;
+    background:#FBF8F2;
+    padding:20px;
+    border-radius:15px;
+    border:1px solid #DDD4C4;
+}
+
+.question-box h2{
+    color:#2F3325;
+    font-size:22px;
+    font-weight:600;
+}
+
+/* ===========================
+   Options
+=========================== */
+
+.options{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.option{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px;
+    background:#FFFDF8;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+    border:2px solid #DDD4C4;
+}
+
+.option:hover{
+    background:#F0F2E8;
+    border-color:#4A5A2C;
+}
+
+.option input[type="radio"]{
+    width:20px;
+    height:20px;
+    accent-color:#4A5A2C;
+}
+
+.option input:checked + span{
+    color:#4A5A2C;
+    font-weight:600;
+}
+
+.option span{
+    font-size:18px;
+    color:#2F3325;
+    line-height:1.5;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.buttons{
+    display:flex;
+    justify-content:space-between;
+    margin-top:30px;
+}
+
+button{
+    border:none;
+    padding:12px 24px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s;
+}
+
+#prevBtn{
+    background:#FFFDF8;
+    color:#4A5A2C;
+    border:2px solid #4A5A2C;
+}
+
+#prevBtn:hover{
+    background:#4A5A2C;
+    color:#FFFFFF;
+}
+
+#nextBtn{
+    background:#4A5A2C;
+    color:#FFFFFF;
+}
+
+#nextBtn:hover{
+    background:#36411F;
+}
+
+#submitBtn{
+    background:#4A5A2C;
+    color:#FFFFFF;
+    display:none;
+}
+
+#submitBtn:hover{
+    background:#36411F;
+}
+
+button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+}
+
+/* ===========================
+   Result Popup
+=========================== */
+
+.result-box{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:400px;
+    max-width:90%;
+    background:#FFFDF8;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    border:2px solid #B8B08D;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+    display:none;
+    z-index:999;
+}
+
+.result-box h2{
+    color:#4A5A2C;
+    margin-bottom:15px;
+}
+
+.result-box h1{
+    color:#2F3325;
+    margin-bottom:15px;
+}
+
+.result-box p{
+    margin-bottom:10px;
+    font-size:18px;
+    color:#6F6858;
+}
+
+.result-box button{
+    margin-top:20px;
+    width:100%;
+    background:#4A5A2C;
+    color:#FFFFFF;
+}
+
+.result-box button:hover{
+    background:#36411F;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:768px){
+
+    .quiz-card{
+        padding:25px;
+    }
+
+    .question-box h2{
+        font-size:20px;
+    }
+
+    .option span{
+        font-size:17px;
+    }
+
+    .buttons{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    button{
+        width:100%;
+    }
+
+}

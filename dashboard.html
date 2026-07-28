@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FinanceWise Dashboard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ================= Sidebar ================= -->
+
+    <aside class="sidebar">
+
+        <h2>💰 FinanceWise</h2>
+
+        <ul>
+
+            <li class="active">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </li>
+
+        <li>
+    <a href="modulee1.html" style="text-decoration:none;color:inherit;">
+        <i class="fa-solid fa-wallet"></i>
+        Learning Module
+    </a>
+        </li>
+
+            <li>
+    <a href="expense-tracker.html" style="text-decoration:none;color:inherit; display:block;">
+        <i class="fa-solid fa-money-bill-trend-up"></i>
+        Expense Tracker
+    </a>
+</li>
+
+            <li>
+    <a href="savings.html" style="text-decoration:none;color:inherit; display:block;">
+        <i class="fa-solid fa-piggy-bank"></i>
+        Savings
+    </a>
+</li>
+
+           <li>
+    <a href="analytics (1).html" style="text-decoration:none;color:inherit; display:block;">
+        <i class="fa-solid fa-chart-line"></i>
+        Analytics
+    </a>
+</li>
+
+            <li>
+    <a href="quiz-dashboard.html" style="text-decoration:none;color:inherit; display:block;">
+        <i class="fa-solid fa-medal"></i>
+        Quizzes
+    </a>
+</li>
+
+            <li>
+                <i class="fa-solid fa-user"></i>
+                Profile
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- ================= Main ================= -->
+
+    <main class="main">
+
+        <!-- ================= Topbar ================= -->
+
+        <div class="topbar">
+
+            <div>
+
+                <h1>Hello,  👋</h1>
+
+                <p>
+                    Track your income, control your expenses,
+                    and grow your savings every month.
+                </p>
+
+            </div>
+
+            <div class="profile">
+
+                <i class="fa-regular fa-bell"></i>
+
+                <img src="https://i.pravatar.cc/100?img=12" alt="Profile">
+
+            </div>
+
+        </div>
+
+        <!-- ================= Hero Banner ================= -->
+
+        
+
+        <!-- ================= Income Planner ================= -->
+
+        <section class="box incomePlanner">
+
+            <h2>
+
+                <i class="fa-solid fa-wallet"></i>
+
+                Monthly Budget Planner <br><br>
+
+            </h2>
+
+            <div class="incomeBox">
+
+                <div>
+
+                    <label>
+
+                        Enter Monthly Income: 
+
+                    </label>
+
+                    <input
+                        type="number"
+                        id="incomeInput"
+                        placeholder="Example : 25000"> <br><br>
+
+                </div>
+
+                <button id="calculateBtn">
+
+                    Calculate Budget
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ================= Budget Cards ================= -->
+
+        <section class="cards">
+
+            <!-- Income -->
+
+            <div class="card income">
+
+                <i class="fa-solid fa-wallet"></i>
+
+                <h3>Monthly Income</h3>
+
+                <h1 id="incomeDisplay">
+
+                    ₹0
+
+                </h1>
+
+                <small>Total Monthly Earnings</small>
+
+            </div>
+
+            <!-- Savings -->
+
+            <div class="card saving">
+
+                <i class="fa-solid fa-piggy-bank"></i>
+
+                <h3>25% Savings</h3>
+
+                <h1 id="savingDisplay">
+
+                    ₹0
+
+                </h1>
+
+                <small>Automatically Reserved</small>
+
+            </div>
+
+            <!-- Spending -->
+
+            <div class="card spending">
+
+                <i class="fa-solid fa-credit-card"></i>
+
+                <h3>75% Spending</h3>
+
+                <h1 id="spendingDisplay">
+
+                    ₹0
+
+                </h1>
+
+                <small>Available Budget</small>
+
+            </div>
+
+            <!-- Remaining -->
+
+            <div class="card remaining">
+
+                <i class="fa-solid fa-coins"></i>
+
+                <h3>Remaining Budget</h3>
+
+                <h1 id="remainingDisplay">
+
+                    ₹0
+
+                </h1>
+
+                <small>Updates Automatically</small>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========= SECTION B STARTS FROM HERE ========= -->
+<!-- ================= Main Content ================= -->
+
+<div class="content">
+
+   
+
+    <!-- ================= Right Side ================= -->
+
+    <div class="right">
+
+        <!-- Financial Health -->
+
+        <div class="box">
+
+            <h2>
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+                Financial Health
+
+            </h2>
+
+            <div class="circle">
+
+                <span id="healthScore">
+
+                    92%
+
+                </span>
+
+            </div>
+
+            <p style="text-align:center;margin-top:15px;">
+
+                Excellent Saving Habit 🎉
+
+            </p>
+
+        </div>
+
+        
+<!-- ========= SECTION C STARTS FROM HERE ========= -->
+<!-- ================= Bottom Dashboard ================= -->
+
+<div class="dashboardBottom">
+
+    <!-- Achievement Badges -->
+
+    <div class="box">
+
+        <h2>
+            <i class="fa-solid fa-medal"></i>
+            Achievement Badges
+        </h2>
+
+        <div class="badges">
+
+            <div class="badge">
+                <div class="emoji">🥉</div>
+                <h4>Saver</h4>
+                <small>Save 25%</small>
+            </div>
+
+            <div class="badge">
+                <div class="emoji">🥈</div>
+                <h4>Smart Saver</h4>
+                <small>Save 35%</small>
+            </div>
+
+            <div class="badge">
+                <div class="emoji">🥇</div>
+                <h4>Budget Master</h4>
+                <small>Save 50%</small>
+            </div>
+
+            <div class="badge">
+                <div class="emoji">👑</div>
+                <h4>Finance Guru</h4>
+                <small>Save 75%</small>
+            </div>
+
+        </div>
+
+    </div>
+
+<!-- ================= Quote ================= -->
+
+<div class="box">
+
+    <h2>
+
+        💡 Finance Tip of the Day
+
+    </h2>
+
+    <br>
+
+    <blockquote>
+
+        "Do not save what is left after spending. Spend what is left after saving."
+
+    </blockquote>
+
+    <br>
+
+    <h4>
+
+        — Warren Buffett
+
+    </h4>
+
+</div>
+
+<!-- ================= Footer ================= -->
+
+<footer>
+
+    <p>
+
+        © 2026 FinanceWise
+
+        <br>
+
+        Interactive Financial Literacy Platform for Teenagers & Young Earners
+
+    </p>
+
+</footer>
+
+</main>
+
+</div>
+
+<!-- Chart.js -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- JavaScript -->
+
+<script src="script.js"></script>
+
+</body>
+</html>

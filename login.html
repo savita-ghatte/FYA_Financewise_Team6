@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceWise - Login</title>
+
+    <style>
+        * { 
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #FAF6F0, #F7E6D5, #E7E3D4, #FDFBF8);
+            overflow: hidden;
+        }
+
+        /* Decorative Background */
+        .bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: .18;
+        }
+
+        .c1 {
+            width: 280px;
+            height: 280px;
+            background: #A3B18A;
+            top: -70px;
+            left: -70px;
+        }
+
+        .c2 {
+            width: 250px;
+            height: 250px;
+            background: #F2C6A0;
+            bottom: -60px;
+            right: -60px;
+        }
+
+        .c3 {
+            width: 180px;
+            height: 180px;
+            background: #D8E2C4;
+            top: 40%;
+            left: 10%;
+        }
+
+        .icons {
+            position: absolute;
+            color: #7A8450;
+            font-size: 55px;
+            opacity: .10;
+        }
+
+        .i1 {
+            top: 10%;
+            right: 15%;
+        }
+
+        .i2 {
+            bottom: 18%;
+            left: 12%;
+        }
+
+        .i3 {
+            top: 55%;
+            right: 10%;
+        }
+
+        .i4 {
+            top: 25%;
+            left: 22%;
+        }
+
+        /* Main Card */
+
+        .container {
+            width: 1000px;
+            max-width: 92%;
+            display: flex;
+            border-radius: 28px;
+            overflow: hidden;
+            background: #fffdfb;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, .12);
+            position: relative;
+            z-index: 5;
+        }
+
+        /* Left */
+
+        .left {
+            flex: 1;
+            background: linear-gradient(145deg, #F5E6D6, #FAF6F0);
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: #A3B18A;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        .left h1 {
+            color: #000;
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .left h3 {
+            color: #8A735A;
+            margin-bottom: 25px;
+        }
+
+        .left p {
+            color: #666;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .illustration {
+            margin-top: 40px;
+            font-size: 70px;
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Right */
+
+        .right {
+            flex: 1;
+            background: #fff;
+            padding: 55px;
+        }
+
+        .right h2 {
+            color: #000;
+            margin-bottom: 8px;
+            font-size: 30px;
+        }
+
+        .right p {
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        .inputBox {
+            margin-bottom: 20px;
+        }
+
+        .inputBox label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 600;
+        }
+
+        .inputBox input {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            outline: none;
+            font-size: 15px;
+            transition: .3s;
+        }
+
+        .inputBox input:focus {
+            border-color: #A3B18A;
+            box-shadow: 0 0 10px rgba(163, 177, 138, .3);
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .options a {
+            color: #556B2F;
+            text-decoration: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 15px;
+            transition: .3s;
+        }
+
+        .login {
+            background: #A3B18A;
+            color: white;
+        }
+
+        .login:hover {
+            background: #87986D;
+        }
+
+        .google {
+            background: #F5E6D6;
+            color: #444;
+        }
+
+        .google:hover {
+            background: #EFD6BF;
+        }
+
+        .create {
+            background: white;
+            border: 2px solid #A3B18A;
+            color: #556B2F;
+        }
+
+        .create:hover {
+            background: #A3B18A;
+            color: white;
+        }
+
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #999;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+
+        @media(max-width:900px) {
+
+            .container {
+                flex-direction: column;
+            }
+
+            .left {
+                text-align: center;
+                align-items: center;
+            }
+
+            .illustration {
+                justify-content: center;
+            }
+
+            .right {
+                padding: 35px;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="bg">
+        <div class="circle c1"></div>
+        <div class="circle c2"></div>
+        <div class="circle c3"></div>
+
+        <div class="icons i1">📈</div>
+        <div class="icons i2">💰</div>
+        <div class="icons i3">🐷</div>
+        <div class="icons i4">📊</div>
+    </div>
+
+    <div class="container">
+
+        <div class="left">
+
+            <div class="logo">
+                🎓
+            </div>
+
+            <h1>FinanceWise</h1>
+
+            <h3>Learn. Save. Grow.</h3>
+
+            <p>
+                FinanceWise helps college students develop smart money habits through budgeting,
+                expense tracking, financial education, and savings goals. Build your financial
+                future one step at a time.
+            </p>
+            <br>
+
+            <div class="features">
+
+                <div class="box">
+                    📊
+                    <h3>Budget</h3>
+                </div>
+
+                <div class="box">
+                    🐷
+                    <h3>Savings</h3>
+                </div>
+
+                <div class="box">
+                    📈
+                    <h3>Growth</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="right">
+
+            <h2>Welcome Back</h2>
+
+            <p>Login to continue your financial learning journey.</p>
+
+            <form>
+
+                <div class="inputBox">
+                    <label>Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email">
+                </div>
+
+                <div class="inputBox">
+                    <label>Password</label>
+                    <input type="password" id="password" placeholder="Enter your password">
+                </div>
+
+                <div class="options">
+                    <label>
+                        <input type="checkbox">
+                        Remember Me
+                    </label>
+
+                    <a href="#" onclick="handleForgotPassword(event)">Forgot Password?</a>
+                </div>
+
+                <button type="button" class="login" onclick="loginUser()">
+                    Login
+                </button>
+
+                <button type="button" class="google">
+                    🌐 Continue with Google
+                </button>
+
+                <button type="button" class="create">
+                    <a href="signup.html" style="text-decoration:none"> Create New Account </a>
+                </button>
+
+            </form>
+
+            <div class="footer">
+                © 2026 FinanceWise • Financial Literacy for Every Student
+            </div>
+
+        </div>
+
+    </div>
+
+<script src="login.js"></script>
+
+</body>
+
+</html>
