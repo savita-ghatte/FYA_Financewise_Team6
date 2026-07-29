@@ -27,23 +27,32 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <aside class="sidebar">
 
-<h2><i class="fa-solid fa-sack-dollar"></i> FinanceWise</h2>
+<h2>💰 FinanceWise</h2>
 
 <ul>
 
-<li><a href="dashboard.html"><i class="fa-solid fa-house"></i> Home</a></li>
+<li><a href="dashboard.html">
+    <i class="fa-solid fa-house"></i> Home</a></li>
 
-<li><a href="#"><i class="fa-solid fa-book"></i> Learning Module</a></li>
+<li><a href="modulee1.html">
+    <i class="fa-solid fa-book"></i> Learning Module</a></li>
 
-<li><a href="expense-tracker.html"><i class="fa-solid fa-wallet"></i> Expense Tracker</a></li>
+<li><a href="expense-tracker.html">
+    <i class="fa-solid fa-wallet"></i> Expense Tracker</a></li>
 
-<li class="active"><a href="savings.html"><i class="fa-solid fa-piggy-bank"></i> Savings</a></li>
+<li class="active">
+    <a href="savings.html"><i class="fa-solid fa-piggy-bank"></i> Savings</a></li>
 
-<li><a href="analytics.html"><i class="fa-solid fa-chart-line"></i> Analytics</a></li>
+<li><a href="analytics.html">
+    <i class="fa-solid fa-chart-line"></i> Analytics</a></li>
 
-<li><a href="#"><i class="fa-solid fa-medal"></i> Quizzes</a></li>
+<li><a href="quiz-dashboard.html">
+    
+    <i class="fa-solid fa-medal"></i> Quizzes</a></li>
 
-<li><a href="#"><i class="fa-solid fa-user"></i> Profile</a></li>
+<li><a href="#"><i class="fa-solid fa-user">
+
+</i> Profile</a></li>
 
 </ul>
 
@@ -61,15 +70,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <h2><i class="fa-solid fa-piggy-bank"></i> Total Savings</h2>
 
-<h1 id="totalSavings">₹75,000</h1>
+<h1>₹75,000</h1>
 
 <div class="progress">
 
-<div class="fill" id="progressFill"></div>
+<div class="fill"></div>
 
 </div>
 
-<p id="savingsGoalText">Goal : ₹2,00,000</p>
+<p>Goal : ₹2,00,000</p>
 
 </div>
 
@@ -91,7 +100,7 @@ Whatever remains from your spending budget will automatically be transferred to 
 
 <h3>Unused Budget</h3>
 
-<h1 id="unusedBudget">₹22,500</h1>
+<h1>₹22,500</h1>
 
 </div>
 
@@ -105,7 +114,7 @@ Whatever remains from your spending budget will automatically be transferred to 
 
 <h3>Updated Savings</h3>
 
-<h1 id="updatedSavings">₹97,500</h1>
+<h1>₹97,500</h1>
 
 </div>
 
@@ -131,7 +140,7 @@ Transfer to Savings
 
 <h3>This Month Saved</h3>
 
-<h2 id="monthlySaved">₹15,000</h2>
+<h2>₹15,000</h2>
 
 </div>
 
@@ -141,7 +150,7 @@ Transfer to Savings
 
 <h3>Saving Rate</h3>
 
-<h2 id="savingRate">75%</h2>
+<h2>75%</h2>
 
 </div>
 
@@ -151,7 +160,7 @@ Transfer to Savings
 
 <h3>Achievement</h3>
 
-<h2 id="achievementTitle">Gold Saver</h2>
+<h2>Gold Saver</h2>
 
 </div>
 
@@ -178,64 +187,6 @@ Keep it up to unlock Platinum Saver Badge.
 </main>
 
 </div>
-
-<script>
-async function loadSavingsData() {
-    try {
-        // Fetch user financial metrics from the backend (pass the logged-in user's email)
-        const email = localStorage.getItem("userEmail") || "test@example.com"; 
-        const response = await fetch(`http://127.0.0.1:5000/get-savings?email=${email}`);
-        const data = await response.json();
-
-        if (data.success) {
-            const income = data.income;
-            const currentSavings = data.current_savings;
-            const goal = data.savings_goal;
-            const monthlyBudget = data.monthly_budget;
-            const monthlySpent = data.monthly_spent;
-
-            // --- CALCULATIONS ---
-            
-            // 1. Unused Budget Calculation (Budget minus what was actually spent)
-            const unusedBudget = Math.max(0, monthlyBudget - monthlySpent);
-            
-            // 2. Updated Savings (Current savings + unused budget bonus)
-            const updatedSavings = currentSavings + unusedBudget;
-
-            // 3. This Month Saved estimation (e.g., portion of income saved)
-            const thisMonthSaved = unusedBudget; 
-
-            // 4. Saving Rate Percentage Calculation: (Saved / Income) * 100
-            let savingRate = income > 0 ? Math.round((thisMonthSaved / income) * 100) : 0;
-
-            // 5. Progress Bar Percentage calculation towards goal
-            let progressPercent = goal > 0 ? Math.min(100, Math.round((currentSavings / goal) * 100)) : 0;
-
-            // 6. Dynamic Achievement Logic based on Saving Rate
-            let achievement = "Beginner Saver";
-            if (savingRate > 25) achievement = "Gold Saver";
-            if (savingRate > 50) achievement = "Platinum Saver";
-
-            // --- UPDATE THE HTML ELEMENTS ---
-            document.getElementById("totalSavings").innerText = `₹${currentSavings.toLocaleString()}`;
-            document.getElementById("savingsGoalText").innerText = `Goal : ₹${goal.toLocaleString()}`;
-            document.getElementById("progressFill").style.width = `${progressPercent}%`;
-            
-            document.getElementById("unusedBudget").innerText = `₹${unusedBudget.toLocaleString()}`;
-            document.getElementById("updatedSavings").innerText = `₹${updatedSavings.toLocaleString()}`;
-            
-            document.getElementById("monthlySaved").innerText = `₹${thisMonthSaved.toLocaleString()}`;
-            document.getElementById("savingRate").innerText = `${savingRate}%`;
-            document.getElementById("achievementTitle").innerText = achievement;
-        }
-    } catch (error) {
-        console.error("Error loading savings data:", error);
-    }
-}
-
-// Run calculation when the page loads
-window.onload = loadSavingsData;
-</script>
 
 </body>
 
