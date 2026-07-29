@@ -197,28 +197,30 @@ header{
 }
 
 /*=========================================
- HERO SECTION
+ HERO SECTION - FULL WIDTH BACKGROUND
 =========================================*/
 
 .hero{
-
-    padding:150px 0 90px;
-
+    /* Sets the vertical height to cover roughly 1/3rd of a standard screen */
+    min-height: 85vh;
+    padding: 180px 0 90px;
+    
+    /* Makes the background image span the entire horizontal width */
+    background: url('images/hero.png');
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
 }
 
 .hero-content{
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:70px;
-
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .hero-text{
-
-    flex:1;
-
+    flex: 1;
+    max-width: 600px;
 }
 
 .hero-text h1{
@@ -337,45 +339,6 @@ header{
 
     color:var(--light-text);
     font-size:14px;
-
-}
-
-/*=========================================
- HERO IMAGE
-=========================================*/
-
-.hero-image{
-
-    flex:1;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-}
-
-.hero-image img{
-
-    width:100%;
-    max-width:650px;
-    object-fit:contain;
-
-    animation:floatImage 5s ease-in-out infinite;
-
-}
-
-@keyframes floatImage{
-
-0%,100%{
-
-    transform:translateY(0);
-
-}
-
-50%{
-
-    transform:translateY(-12px);
-
-}
 
 }
 
@@ -768,14 +731,12 @@ footer{
  IMAGE HOVER
 =========================================*/
 
-.hero-image img,
 .about-image img{
 
     transition:.5s;
 
 }
 
-.hero-image img:hover,
 .about-image img:hover{
 
     transform:scale(1.03);
@@ -844,7 +805,7 @@ footer{
 }
 
 .hero-text,
-.hero-image,
+.hero-content,
 .feature-card,
 .about-image,
 .about-text,
@@ -910,12 +871,6 @@ footer{
 
 }
 
-.hero-image img:hover{
-
-    transform:scale(1.03);
-
-}
-
 /*=========================================
   SMOOTH SECTION SPACING
 =========================================*/
@@ -927,50 +882,10 @@ section{
 }
 
 /*=========================================
-  RESPONSIVE - 1200px
-=========================================*/
-
-@media (max-width:1200px){
-
-    .hero-text h1{
-
-        font-size:56px;
-
-    }
-
-    .hero-image img{
-
-        max-width:560px;
-
-    }
-
-}
-
-/*=========================================
   RESPONSIVE - 992px
 =========================================*/
 
 @media(max-width:992px){
-
-    .hero-content{
-
-        flex-direction:column-reverse;
-        text-align:center;
-        gap:50px;
-
-    }
-
-    .hero-buttons{
-
-        justify-content:center;
-
-    }
-
-    .hero-features{
-
-        justify-content:center;
-
-    }
 
     .about-content{
 
@@ -1143,12 +1058,6 @@ section{
 
     }
 
-    .hero-image img{
-
-        max-width:100%;
-
-    }
-
     .section-title h2{
 
         font-size:28px;
@@ -1188,32 +1097,6 @@ section{
     .footer-content{
 
         gap:30px;
-
-    }
-
-}
-
-/*=========================================
-  LARGE SCREEN IMPROVEMENTS
-=========================================*/
-
-@media(min-width:1400px){
-
-    .container{
-
-        max-width:1350px;
-
-    }
-
-    .hero-text h1{
-
-        font-size:72px;
-
-    }
-
-    .hero-image img{
-
-        max-width:720px;
 
     }
 
