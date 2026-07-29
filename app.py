@@ -171,7 +171,6 @@ def forgot_password():
     try:
         data = request.get_json()
         email = data["email"]
-
         # 1. Check if the email exists in the database
         cursor.execute("SELECT * FROM users WHERE email=%s", (email,))
         user = cursor.fetchone()
