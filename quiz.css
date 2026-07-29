@@ -73,10 +73,6 @@ body{
     transition:.4s;
 }
 
-/* ===========================
-   Question
-=========================== */
-
 .question-box{
     margin-bottom:25px;
     background:#FBF8F2;
@@ -90,10 +86,6 @@ body{
     font-size:22px;
     font-weight:600;
 }
-
-/* ===========================
-   Options
-=========================== */
 
 .options{
     display:flex;
@@ -135,9 +127,6 @@ body{
     line-height:1.5;
 }
 
-/* ===========================
-   Buttons
-=========================== */
 
 .buttons{
     display:flex;
@@ -190,9 +179,6 @@ button:hover{
     box-shadow:0 8px 18px rgba(0,0,0,.18);
 }
 
-/* ===========================
-   Result Popup
-=========================== */
 
 .result-box{
     position:fixed;
@@ -238,9 +224,7 @@ button:hover{
     background:#36411F;
 }
 
-/* ===========================
-   Responsive
-=========================== */
+
 
 @media(max-width:768px){
 
