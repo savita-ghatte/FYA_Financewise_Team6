@@ -1,110 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FinanceWise | Expense Tracker</title>
+
     <link rel="stylesheet" href="expense-tracker.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
+
 <div class="container">
+
     <!-- Sidebar -->
+
     <aside class="sidebar">
-        <h2><i class="fa-solid fa-sack-dollar"></i> FinanceWise</h2>
+
+        <h2>💰 FinanceWise</h2>
+
         <ul>
+
             <li><a href="dashboard.html"><i class="fa-solid fa-house"></i> Home</a></li>
-            <li><a href="#"><i class="fa-solid fa-book"></i> Learning Module</a></li>
+
+            <li><a href="modulee1.html"><i class="fa-solid fa-book"></i> Learning Module</a></li>
+
             <li class="active"><a href="expense-tracker.html"><i class="fa-solid fa-wallet"></i> Expense Tracker</a></li>
-            <li><a href="#"><i class="fa-solid fa-piggy-bank"></i> Savings</a></li>
+
+            <li><a href="savings.html"><i class="fa-solid fa-piggy-bank"></i> Savings</a></li>
+
             <li><a href="analytics.html"><i class="fa-solid fa-chart-line"></i> Analytics</a></li>
-            <li><a href="#"><i class="fa-solid fa-medal"></i> Quizzes</a></li>
+
+            <li><a href="quiz-dashboard.html"><i class="fa-solid fa-medal"></i> Quizzes</a></li>
+
             <li><a href="#"><i class="fa-solid fa-user"></i> Profile</a></li>
+
         </ul>
+
     </aside>
 
+
     <!-- Main -->
+
     <main class="main">
+
         <div class="top">
+
             <h1>Expense Tracker</h1>
+
             <button class="download">
-                <i class="fa-solid fa-download"></i> Export Report
+                <i class="fa-solid fa-download"></i>
+                Export Report
             </button>
+
         </div>
 
+
         <!-- Add Expense -->
+
         <section class="card">
+
             <h2><i class="fa-solid fa-receipt"></i> Add New Expense</h2>
+
             <div class="form">
-                <!-- Added IDs here -->
-                <input type="text" id="expName" placeholder="Expense Name">
-                <select id="expCategory">
-                    <option value="General">Category</option>
-                    <option value="Food">Food</option>
-                    <option value="Shopping">Shopping</option>
-                    <option value="Travel">Travel</option>
-                    <option value="Bills">Bills</option>
-                    <option value="Education">Education</option>
+
+                <input type="text" placeholder="Expense Name">
+
+                <select>
+                    <option>Category</option>
+                    <option>Food</option>
+                    <option>Shopping</option>
+                    <option>Travel</option>
+                    <option>Bills</option>
+                    <option>Education</option>
                 </select>
-                <input type="number" id="expAmount" placeholder="Amount">
-                <input type="date" id="expDate">
-                <button id="addExpBtn" type="button">Add Expense</button>
+
+                <input type="number" placeholder="Amount">
+
+                <input type="date">
+
+                <button>Add Expense</button>
+
             </div>
+
         </section>
+
+
 
         <!-- Summary Cards -->
+
         <section class="summary">
+
             <div class="box">
+
                 <i class="fa-solid fa-wallet"></i>
+
                 <h3>Total Expenses</h3>
-                <!-- Added ID here -->
-                <h1 id="totalExpDisplay">₹0</h1> 
+
+                <h1>₹18,500</h1>
+
             </div>
+
             <div class="box">
+
                 <i class="fa-solid fa-piggy-bank"></i>
+
                 <h3>Remaining Budget</h3>
-                <!-- Added ID here -->
-                <h1 id="remBudgetDisplay">₹0</h1>
+
+                <h1>₹6,500</h1>
+
             </div>
+
             <div class="box">
+
                 <i class="fa-solid fa-coins"></i>
+
                 <h3>Base Savings</h3>
-                <!-- Added ID here -->
-                <h1 id="baseSavingDisplay">₹0</h1>
+
+                <h1>₹5,000</h1>
+
             </div>
+
             <div class="box">
+
                 <i class="fa-solid fa-star"></i>
+
                 <h3>Potential Savings</h3>
-                <!-- Added ID here -->
-                <h1 id="potSavingDisplay">₹0</h1>
+
+                <h1>₹11,500</h1>
+
             </div>
+
         </section>
+
+
 
         <!-- Expense Table -->
+
         <section class="card">
+
             <h2><i class="fa-solid fa-list"></i> Expense History</h2>
+
             <table>
+
                 <thead>
+
                     <tr>
+
                         <th>Name</th>
+
                         <th>Category</th>
+
                         <th>Amount</th>
+
                         <th>Date</th>
-                        <th>Action</th> <!-- Changed from Status to Action -->
+
+                        <th>Status</th>
+
                     </tr>
+
                 </thead>
-                <!-- Added ID to tbody and removed hardcoded rows -->
-                <tbody id="expenseTableBody">
-                    <!-- JavaScript will automatically add rows here -->
+
+                <tbody>
+
+                    <tr>
+
+                        <td>Pizza</td>
+
+                        <td>Food</td>
+
+                        <td>₹350</td>
+
+                        <td>24 Jul</td>
+
+                        <td><span class="tag">Completed</span></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Book</td>
+
+                        <td>Education</td>
+
+                        <td>₹650</td>
+
+                        <td>23 Jul</td>
+
+                        <td><span class="tag">Completed</span></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Movie</td>
+
+                        <td>Entertainment</td>
+
+                        <td>₹400</td>
+
+                        <td>21 Jul</td>
+
+                        <td><span class="tag">Completed</span></td>
+
+                    </tr>
+
                 </tbody>
+
             </table>
+
         </section>
+
     </main>
+
 </div>
 
-<!-- Link to the new expense logic -->
-<script src="expense-tracker.js"></script>
 </body>
+
 </html>
