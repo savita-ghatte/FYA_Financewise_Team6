@@ -26,7 +26,7 @@ display:flex;
 }
 
 
-/* Sidebar */
+
 
 .sidebar{
 
@@ -71,11 +71,11 @@ margin-bottom:12px;
 .sidebar a{
     display:flex;
     align-items:left;
-    justify-content:flex-start;   /* Left align */
+    justify-content:flex-start;   
     gap:15px;
     padding:14px 18px;
     text-decoration:none;
-    color:#ffffff !important;     /* Force white text */
+    color:#ffffff !important;    
     border-radius:12px;
     font-size:17px;
     font-weight:500;
@@ -92,7 +92,7 @@ transform:translateX(5px);
 
 .sidebar .active a {
     background: #ECE3CF;
-    color: #ffffff !important; /* Changed from var(--primary) to white */
+    color: #ffffff !important; 
     font-weight: 600;
 }
 .sidebar .active a i{
@@ -120,7 +120,7 @@ padding:30px;
 }
 
 
-/* Main */
+
 
 .main{
 margin-left:260px;
@@ -140,7 +140,7 @@ font-size:18px;
 color:#666;
 }
 
-/* Cards */
+
 
 .quiz-grid{
 display:grid;
